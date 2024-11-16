@@ -26,7 +26,7 @@ public class SecurityConfig {
         .authorizeHttpRequests(
             authz ->
                 authz
-                    .requestMatchers("/", "/css/**", "/js/**")
+                    .requestMatchers("/", "/favicon.ico", "/css/**", "/js/**")
                     .permitAll()
                     .requestMatchers("/api/auth/**")
                     .permitAll()
