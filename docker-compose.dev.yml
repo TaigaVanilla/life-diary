@@ -21,7 +21,7 @@ services:
       - life-diary-network
 
   mongodb:
-    image: mongo:8.0.3
+    image: mongo:7.0.15
     ports:
       - "27017:27017"
     environment:
