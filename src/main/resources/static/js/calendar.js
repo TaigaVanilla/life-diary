@@ -136,8 +136,10 @@ class Calendar {
     }
 
     this.selectedDate = dateString;
+    const [year, month, day] = dateString.split("-");
+    const formattedDate = `${parseInt(month)}/${parseInt(day)}/${year}`;
     document.getElementById("selectedDate").textContent =
-      `Diary for ${new Date(dateString).toLocaleDateString("en-US")}`;
+      `Diary for ${formattedDate}`;
 
     const diaryContainer = document.getElementById("diary-container");
     diaryContainer.classList.remove("hidden");
