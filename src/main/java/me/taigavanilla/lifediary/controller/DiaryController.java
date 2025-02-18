@@ -51,7 +51,7 @@ public class DiaryController {
   @GetMapping("/month/{year}/{month}")
   public ResponseEntity<List<DiaryEntryResponseDTO>> getEntriesForMonth(
       @PathVariable @Pattern(regexp = "\\d{4}") String year,
-      @PathVariable @Pattern(regexp = "(0[1-9]|1[0-2])") String month,
+      @PathVariable @Pattern(regexp = "^(0?[1-9]|1[0-2])$") String month,
       Authentication authentication) {
 
     List<DiaryEntryResponseDTO> entries =
