@@ -108,9 +108,11 @@ class DiaryExtractor {
     } else {
       entries.forEach((entry) => {
         const entryElement = document.createElement("div");
+        const [year, month, day] = entry.date.split("-");
+        const formattedDate = `${parseInt(month)}/${parseInt(day)}/${year}`;
         entryElement.className = "entry-item";
         entryElement.innerHTML = `
-                    <div class="entry-date">${new Date(entry.date).toLocaleDateString("en-US")}</div>
+                    <div class="entry-date">${formattedDate}</div>
                     <div class="entry-content">${entry.content}</div>
                 `;
         entriesList.appendChild(entryElement);
